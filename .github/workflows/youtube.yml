@@ -1,0 +1,34 @@
+name: Christian Sleep Upload
+
+on:
+  schedule:
+    - cron: "0 21 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.10"
+
+    - name: Install system dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y espeak-ng
+
+    - name: Install Python dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Restore client_secret.json
+      run: |
+        echo "${{ secrets.YT_CLIENT_SECRET }}" | base64 --decode > client_secret.json
+
+    - name: Run automation
+      run: |
+        python run_all.py
