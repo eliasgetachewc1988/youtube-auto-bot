@@ -1,6 +1,6 @@
 import subprocess
 
-VOICE_MODEL = "en.onnx"
+VOICE_MODEL = "en_US-lessac-medium.onnx"
 
 subprocess.run(
     [
@@ -13,3 +13,4 @@ subprocess.run(
 )
 
 print("Voice narration created.")
+
