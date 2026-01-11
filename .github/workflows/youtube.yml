@@ -25,6 +25,13 @@ jobs:
       run: |
         pip install -r requirements.txt
 
+    - name: Download Piper voice model
+      run: |
+        mkdir -p voices
+        wget "https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/lessac/medium/en_US-lessac-medium.onnx" -O voices/en_US-lessac-medium.onnx
+        wget "https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/lessac/medium/en_US-lessac-medium.onnx.json" -O voices/en_US-lessac-medium.onnx.json
+
+
     - name: Restore client_secret.json
       run: |
         echo "${{ secrets.YT_CLIENT_SECRET }}" | base64 --decode > client_secret.json
