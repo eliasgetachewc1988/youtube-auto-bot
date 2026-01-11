@@ -1,6 +1,6 @@
 import random
 
-TARGET_MINUTES = 150        # 2.5 hours
+TARGET_MINUTES = 2        # 2.5 hours
 WORDS_PER_MINUTE = 80       # very slow narration
 
 def pick_topic():
@@ -44,3 +44,4 @@ if __name__ == "__main__":
 
     print("Sleep script generated.")
     print("Topic:", topic)
+
