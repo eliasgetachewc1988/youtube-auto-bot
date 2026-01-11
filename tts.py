@@ -1,6 +1,6 @@
 import subprocess
 
-VOICE_MODEL = "en_US-lessac-medium.onnx"
+VOICE_MODEL = "voices/en_US-lessac-medium.onnx"
 
 subprocess.run(
     [
