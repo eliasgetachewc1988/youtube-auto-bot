@@ -1,9 +1,10 @@
 google-api-python-client
 google-auth
 google-auth-oauthlib
-moviepy==1.0.3
+moviepy
 pillow
 numpy
 requests
 piper-tts
+
 
