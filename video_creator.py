@@ -9,7 +9,7 @@ final_audio = CompositeAudioClip([music_looped, voice])
 
 background = ImageClip("background.jpg") \
     .set_duration(voice.duration) \
-    .resize(height=720) \
+    .resize(height=1080) \
     .set_position("center")
 
 video = background.set_audio(final_audio)
@@ -23,3 +23,4 @@ video.write_videofile(
 )
 
 print("Sleep video created.")
+
